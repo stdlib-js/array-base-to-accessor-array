@@ -41,7 +41,7 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import toAccessorArray from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-base-to-accessor-array@esm/index.mjs';
+import toAccessorArray from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-base-to-accessor-array@v0.0.1-esm/index.mjs';
 ```
 
 #### toAccessorArray( arr )
@@ -105,7 +105,7 @@ var bool = ( arr2 === arr1 );
 <script type="module">
 
 import Complex128Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-complex128@esm/index.mjs';
-import toAccessorArray from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-base-to-accessor-array@esm/index.mjs';
+import toAccessorArray from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-base-to-accessor-array@v0.0.1-esm/index.mjs';
 
 // Define a function for printing the contents of an array and which assumes accessor protocol support:
 function printArray( name, x ) {
