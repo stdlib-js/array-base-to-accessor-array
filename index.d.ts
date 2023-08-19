@@ -1,4 +1,4 @@
-/**
+/*
 * @license Apache-2.0
 *
 * Copyright (c) 2023 The Stdlib Authors.
@@ -16,15 +16,11 @@
 * limitations under the License.
 */
 
-'use strict';
+// TypeScript Version: 4.1
 
-// MODULES //
+/// <reference types="https://cdn.jsdelivr.net/gh/stdlib-js/types@esm/index.d.ts"/>
 
-var isAccessorArray = require( '@stdlib/array-base-assert-is-accessor-array' );
-var AccessorArray = require( '@stdlib/array-base-accessor' );
-
-
-// MAIN //
+import { ArrayLike, AccessorArrayLike } from '@stdlib/types/array';
 
 /**
 * Converts an array-like object to a minimal array-like object supporting the accessor protocol.
@@ -33,25 +29,25 @@ var AccessorArray = require( '@stdlib/array-base-accessor' );
 *
 * -   If a provided array-like object already supports the accessor protocol, the function returns the provided array-like object; otherwise, the function wraps the provided value in a object which uses accessors for getting and setting elements.
 *
-* @param {Collection} arr - input array
-* @throws {TypeError} must provide an array-like object
-* @returns {(Collection|AccessorArray)} array-like object supporting the accessor protocol
+* @param arr - input array
+* @returns accessor array
 *
 * @example
-* var o = toAccessorArray( [ 1, 2, 3 ] );
+* var arr = toAccessorArray( [ 1, 2, 3 ] );
 * // returns <AccessorArray>
 *
-* var v = o.get( 0 );
+* var v = arr.get( 0 );
 * // returns 1
+*
+* @example
+* var Complex128Array = require( `@stdlib/array/complex128` );
+*
+* var arr = toAccessorArray( new Complex128Array( 10 ) );
+* // returns <Complex128Array>
 */
-function toAccessorArray( arr ) {
-	if ( arr && typeof arr === 'object' && isAccessorArray( arr ) ) {
-		return arr;
-	}
-	return new AccessorArray( arr );
-}
+declare function toAccessorArray<T>( arr: ArrayLike<T> ): AccessorArrayLike<T>;
 
 
 // EXPORTS //
 
-module.exports = toAccessorArray;
+export = toAccessorArray;
