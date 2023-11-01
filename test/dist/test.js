@@ -21,59 +21,13 @@
 // MODULES //
 
 var tape = require( 'tape' );
-var isAccessorArray = require( '@stdlib/array-base-assert-is-accessor-array' );
-var Complex128Array = require( '@stdlib/array-complex128' );
-var toAccessorArray = require( './../../dist' );
+var main = require( './../../dist' );
 
 
 // TESTS //
 
-tape( 'main export is a function', function test( t ) {
+tape( 'main export is defined', function test( t ) {
 	t.ok( true, __filename );
-	t.strictEqual( typeof toAccessorArray, 'function', 'main export is a function' );
-	t.end();
-});
-
-tape( 'the function throws an error if not provided an array-like object', function test( t ) {
-	var values;
-	var i;
-
-	values = [
-		'5',
-		3.14,
-		-1,
-		NaN,
-		true,
-		false,
-		null,
-		void 0,
-		{},
-		function noop() {}
-	];
-	for ( i = 0; i < values.length; i++ ) {
-		t.throws( badValue( values[i] ), TypeError, 'throws an error when provided '+values[i] );
-	}
-	t.end();
-
-	function badValue( value ) {
-		return function badValue() {
-			return toAccessorArray( value );
-		};
-	}
-});
-
-tape( 'if provided an array-like not supporting the accessor protocol, the function returns an array-like object supporting the accessor protocol', function test( t ) {
-	var arr1 = [ 1, 2, 3 ];
-	var arr2 = toAccessorArray( arr1 );
-	t.strictEqual( isAccessorArray( arr2 ), true, 'returns expected value' );
-	t.notEqual( arr1, arr2, 'returns new object' );
-	t.end();
-});
-
-tape( 'if provided an array-like object already supporting the accessor protocol, the function returns the input value', function test( t ) {
-	var arr1 = new Complex128Array( 10 );
-	var arr2 = toAccessorArray( arr1 );
-	t.strictEqual( isAccessorArray( arr2 ), true, 'returns expected value' );
-	t.strictEqual( arr1, arr2, 'returns expected value' );
+	t.strictEqual( main !== void 0, true, 'main export is defined' );
 	t.end();
 });
