@@ -52,6 +52,11 @@ limitations under the License.
 ## Usage
 
 ```javascript
+import toAccessorArray from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-base-to-accessor-array@esm/index.mjs';
+```
+The previous example will load the latest bundled code from the esm branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/array-base-to-accessor-array/tags). For example,
+
+```javascript
 import toAccessorArray from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-base-to-accessor-array@v0.2.2-esm/index.mjs';
 ```
 
@@ -116,7 +121,7 @@ var bool = ( arr2 === arr1 );
 <script type="module">
 
 import Complex128Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-complex128@esm/index.mjs';
-import toAccessorArray from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-base-to-accessor-array@v0.2.2-esm/index.mjs';
+import toAccessorArray from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-base-to-accessor-array@esm/index.mjs';
 
 // Define a function for printing the contents of an array and which assumes accessor protocol support:
 function printArray( name, x ) {
